@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "laravel"
+		},
+		{
+			"path": "dotnet"
+		},
+		{
+			"path": "nestjs"
+		},
+		{
+			"path": "linked"
+		},
+		{
+			"path": "docs"
+		}
+	]
+}
