@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "laravel"
+		},
+		{
+			"path": "dotnet"
 		}
 	]
 }
