@@ -1,12 +1,15 @@
 # Note
   - How to Run
     - DEV mode : ```npm run start:dev```
-    - In browser : localhost:8002
-
-  - Swagger
-    - http://localhost:8002/swagger
-  
+    - In browser : localhost:8003
+    
 # Library
 
 # REQUIREMENT
-  - .NET 7 SDK
+  - node v18
+  - npm
+
+## SETUP
+  - After clone repository
+  - cd nestjs
+  - ```npm install```
