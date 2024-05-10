@@ -24,9 +24,9 @@
   ## Install
   > [!IMPORTANT]
   > Install Depedencies , you can install one of them only if you dont want to run the others
-  > ./run laravel install
-  > ./run dotnet install
-  > ./run nestjs install
+    - ./run laravel install
+    - ./run dotnet install
+    - ./run nestjs install
 
   > [!NOTE]
   > For laravel make sure you select frankenphp when installing laravel octane
@@ -47,3 +47,6 @@
 
 # Doc
   - [Framework Routing](docs/ROUTES.md)
+  - Middleware
+  - Handle Error
+  - DB connections & Migrations
