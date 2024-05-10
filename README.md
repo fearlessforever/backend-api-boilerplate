@@ -24,6 +24,7 @@
   ## Install
   > [!IMPORTANT]
   > Install Depedencies , you can install one of them only if you dont want to run the others
+  
     - ./run laravel install
     - ./run dotnet install
     - ./run nestjs install
