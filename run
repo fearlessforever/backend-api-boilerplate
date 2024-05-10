@@ -1,0 +1,78 @@
+#!/bin/bash
+
+declare -A APPLICATION=(
+  ['laravel']=laravel
+  ['dotnet']=dotnet
+  ['nestjs']=nestjs
+);
+
+declare -A commands=(
+  ['install']=install
+  ['serve:dev']=serve:dev
+  ['serve:prod']=serve:prod
+);
+
+installDepedencies(){
+  if [[ $1 == 'laravel' ]];then
+    ( cd laravel \
+      && composer run post-root-package-install \
+      && composer run post-create-project-cmd \
+      && composer install \
+      && php artisan octane:install )
+  fi
+
+  if [[ $1 == 'dotnet' ]];then
+    ( cd dotnet && dotnet restore )
+  fi
+
+  if [[ $1 == 'nestjs' ]];then
+    ( cd nestjs && npm install )
+  fi
+}
+
+runAppDevMode(){
+  if [[ $1 == 'laravel' ]];then
+    ( cd laravel && php artisan octane:start --server=frankenphp --port=8001 --workers=3 --host=0.0.0.0 )
+  fi
+  if [[ $1 == 'dotnet' ]];then
+    ( cd dotnet && dotnet run --launch-profile http )
+  fi
+  if [[ $1 == 'nestjs' ]];then
+    ( cd nestjs && npm run start:dev )
+  fi
+}
+
+selectedApp=$1
+shift
+
+if [[ ${APPLICATION[$selectedApp]} ]]; then
+    
+    if [[ $# -gt 0 && ${commands[$1]} ]]; then
+      cmd=${commands[$1]}
+      shift
+
+      if [[ $cmd == 'install' ]]; then
+        installDepedencies $selectedApp
+      fi
+
+      if [[ $cmd == 'serve:dev' ]]; then
+        runAppDevMode $selectedApp
+      fi
+
+    else
+      echo ""
+      echo "unknown commands"
+      echo "try one of these -> ${commands[@]}"
+      echo ""
+    fi
+    
+else
+  echo ""
+  echo "unknown application"
+  echo "try one of these -> ${APPLICATION[@]}"
+  echo "example: ./run ${APPLICATION[laravel]} "
+  echo ""
+
+fi
+
+
