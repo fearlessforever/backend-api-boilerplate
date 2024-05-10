@@ -25,9 +25,13 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Fearless\\": "fearlessforever/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "fearlessforever/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
