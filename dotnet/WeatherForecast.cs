@@ -1,4 +1,4 @@
-namespace MyApp;
+namespace Fearless;
 
 public class WeatherForecast
 {

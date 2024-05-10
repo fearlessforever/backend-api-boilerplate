@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyApp.Controllers;
+namespace Fearless.Controllers;
 
 [ApiController]
 [Route("[controller]")]

@@ -10,3 +10,8 @@
 
 # REQUIREMENT
   - .NET 7 SDK
+
+## SETUP
+  - After clone repository ( optional since the dotnet sdk will install any depedency packages before running app )
+  - cd dotnet
+  - ```dotnet restore```
